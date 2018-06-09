@@ -1,0 +1,6 @@
+let $USERPC = $VIM."\\userset"
+source $USERPC\\base.vim"
+source $USERPC\\color.vim"
+source $USERPC\\encoding.vim"
+source $USERPC\\keymap.vim"
+source $USERPC\\menu.vim"
