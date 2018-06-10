@@ -1,5 +1,8 @@
 syntax enable
-colorscheme evening
+filetype plugin on 
+" colorscheme evening
+set background=dark
+colorscheme solarized
 set guifont=Consolas
 
 set number

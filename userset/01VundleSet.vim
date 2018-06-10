@@ -29,7 +29,10 @@ Plugin 'VundleVim/Vundle.vim'
 "
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'maralla/completor.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'SuperTab'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
