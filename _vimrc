@@ -1,6 +1,5 @@
-let $USERPC = $VIM."\\userset"
-source $USERPC\\base.vim"
-source $USERPC\\color.vim"
-source $USERPC\\encoding.vim"
-source $USERPC\\keymap.vim"
-source $USERPC\\menu.vim"
+let s:sourcelist = glob($VIM."\\userset\\*.vim", v:true, v:true)
+for each in s:sourcelist
+    exe "source\ ".each
+endfor
+unlet s:sourcelist
