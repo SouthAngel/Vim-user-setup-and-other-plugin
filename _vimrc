@@ -1,7 +1,13 @@
-let s:sourcelist = glob($VIM."\\userset\\*.vim", v:true, v:true)
-for each in s:sourcelist
-    exe "source\ ".each
-endfor
-unlet each
-unlet s:sourcelist
+source $VIM\\userset\\VundleSet.vim
+source $VIM\\userset\\encoding.vim
+
+source $VIMRUNTIME\delmenu.vim
+source $VIMRUNTIME\menu.vim
+source $VIM\\userset\\menu.vim
+
+source $VIM\\userset\\color.vim
+source $VIM\\userset\\keymap.vim
+
 source $VIM\\userset\\dictionary\\complete.vim
+
+source$VIM\\userset\\base.vim
