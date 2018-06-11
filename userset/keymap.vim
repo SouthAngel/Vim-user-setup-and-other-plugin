@@ -1,5 +1,7 @@
 nnoremap <F5> :w<CR>:source %:p<CR>
 inoremap <C-z> <Esc>u
+nnoremap <C-z> u
+nnoremap <C-s> :close<CR>
 noremap <C-y> <Esc><C-r>
-noremap L $
-noremap H ^
+nnoremap L $
+nnoremap H ^
