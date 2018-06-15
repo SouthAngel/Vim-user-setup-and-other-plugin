@@ -5,3 +5,4 @@ nnoremap <C-s> :close<CR>
 noremap <C-y> <Esc><C-r>
 nnoremap L $
 nnoremap H ^
+vnoremap / y/<C-r>+<CR>
