@@ -1,10 +1,12 @@
-noremap <F5> :w<CR>:source %:p<CR>
-inoremap <C-z> <Esc>u
-nnoremap <C-z> u
-nnoremap <C-s> :close<CR>
 noremap <C-y> <Esc><C-r>
 noremap L $
 noremap H ^
-vnoremap / y/<C-r>+<CR>
+nnoremap <C-Z> u
+nnoremap <C-Up> ddkP
+nnoremap <C-Down> ddp
+inoremap <C-Up> <Esc>ddkPi
+inoremap <C-Down> <Esc>ddpi
+inoremap <C-S> <Esc>:w<CR>a
+inoremap <C-Z> <Esc>u
+vnoremap / y/<C-R>+<CR>
 
-noremap <F3> :call textFunLib#ToggledWith("\#\ ")<CR>
