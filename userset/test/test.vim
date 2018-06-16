@@ -1,3 +1,7 @@
-let filelist=glob($VIM."\\userset\\*.vim", v:true, v:true)
-" let filelist=["a", "b"]
-echo filelist
+
+let b:modeTest = mode()
+if b:modeTest == "n"
+	echo "Under n"
+else
+	echo "Not under n"
+en
