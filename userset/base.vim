@@ -2,7 +2,12 @@ syntax enable
 filetype plugin on 
 " colorscheme evening
 set background=dark
-colorscheme solarized
+if has('gui_running')
+  set background=dark
+  colorscheme slate
+else
+  colorscheme slate
+endif
 set guifont=Consolas
 
 set number
@@ -21,3 +26,4 @@ set incsearch
 set hlsearch
 
 set foldmethod=indent
+
