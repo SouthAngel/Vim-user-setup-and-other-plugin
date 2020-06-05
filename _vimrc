@@ -69,6 +69,7 @@ set t_Co=256
 set laststatus=2
 set lazyredraw
 let $PATH=$PATH.";".$VIM."/commands"
+set pythonthreedll=D:/Python/Python38/python38.dll
 
 "Options {{{1
 set nocompatible

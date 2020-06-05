@@ -1,0 +1,3 @@
+[submodule "vim_rp"]
+	path = vim_rp
+	url = https://github.com/vim/vim.git
