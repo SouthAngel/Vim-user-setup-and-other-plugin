@@ -27,10 +27,10 @@ Plug 'mattn/emmet-vim'
 "     \ 'do': 'bash install.sh',
 "     \ }
 
-" Plug 'maralla/completor.vim'
-" Plug 'kyouryuukunn/completor-necovim'
+Plug 'maralla/completor.vim'
+Plug 'kyouryuukunn/completor-necovim'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Plug 'deoplete-plugins/deoplete-jedi'
 " Plug 'davidhalter/jedi'
@@ -69,6 +69,7 @@ set t_Co=256
 set laststatus=2
 set lazyredraw
 let $PATH=$PATH.";".$VIM."/commands"
+set pythonthreedll=D:/Python/Python38/python38.dll
 
 "Options {{{1
 set nocompatible
@@ -90,8 +91,18 @@ set relativenumber
 set wildmode=list:longest
 set directory-=.
 set hidden
+set ignorecase
+set smartcase
 
 " Plugin options {{{1
+
+" Gruvbox Plugin {{{2
+if has_key(g:plugs, "morhetz/gruvbox")
+    hi BufTabLineActive ctermfg=235 ctermbg=246 guifg=#282828 guibg=#a89984
+    " hi BufTabLineCurrent ctermfg=246 ctermbg=239 guifg=#a89984 guibg=#504945
+    hi! BufTabLineCurrent ctermfg=246 ctermbg=239 guifg=#a89984 guibg=#901010
+endif
+
 " Airline Plugin {{{2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1

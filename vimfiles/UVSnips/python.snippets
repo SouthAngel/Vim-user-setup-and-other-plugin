@@ -39,7 +39,7 @@ endsnippet
 snippet classsuper "class super from object" b
 class ${1:MyClass}(object):
 	def __init__(self):
-		super($1).__init__(self)
+		super($1, self).__init__()
 endsnippet
 
 snippet defself "Method under a class" b
