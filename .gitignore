@@ -110,3 +110,4 @@ runtime/*.exe
 hosts
 hosts.txt
 runtime/
+temp*

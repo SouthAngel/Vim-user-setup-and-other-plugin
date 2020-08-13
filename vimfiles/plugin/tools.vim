@@ -68,10 +68,19 @@ function tools#quicklyFix()
     endif
 endfunction
 
+function tools#buffDelOther()
+    for bi in getbufinfo()
+        if bi['hidden']
+            exe 'bd'.bi['bufnr']
+        endif
+    endfor
+endfunction
+
 command! -nargs=1 Tool call tools#call(<f-args>)
 command! -nargs=1 OpenMFile call tools#openMapFile(<f-args>)
 command! VimSource call tools#sourceCurrent()
 command! OpenVimrc call tools#openInitFile()
+command! BuffDelOther call tools#buffDelOther()
 command! ExplorerView exe "!start explorer ".expand("%:p:h")
 command! Gitbash exe "!start \"D:\\Program Files\\Git\\git-bash.exe\""
 

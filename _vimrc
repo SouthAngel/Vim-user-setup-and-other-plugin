@@ -28,7 +28,7 @@ Plug 'mattn/emmet-vim'
 "     \ }
 
 Plug 'maralla/completor.vim'
-Plug 'kyouryuukunn/completor-necovim'
+Plug 'kyouryuukunn/completor-necovim' " vim script supported
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
