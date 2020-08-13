@@ -1,6 +1,6 @@
-" if exists("s:loaded"):
-"   finish
-" endif
+if exists("s:loaded")
+  finish
+endif
 let s:loaded = 1
 let s:__name__ = "!__main__"
 let s:projectFolderName = ".uproject"
@@ -14,6 +14,7 @@ function projectFolder#findufolder(refind)
         if l:ret != ""
             let l:ret = substitute(fnamemodify(l:ret, ":p"), "\\".s:projectFolderName.".$", "", "")
             let g:projectFolderPath = l:ret
+            exe "cd ".g:projectFolderPath
         endif
     endif
     return l:ret

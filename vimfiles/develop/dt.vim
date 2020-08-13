@@ -1,11 +1,19 @@
 " print( log)
 
 function s:t_fun()
-    for bi in getbufinfo()
-        if bi['hidden']
-            exe 'bd'.bi['bufnr']
+    let l:ext = expand("%:e")
+    let l:tmp = expand("%:p:r")
+    if l:ext=="h" 
+        let l:tmp.=".cpp"
+        if filereadable(l:tmp)
+            exe "edit ".l:tmp
         endif
-    endfor
+    elseif l:ext=="cpp"
+        let l:tmp.=".h"
+        if filereadable(l:tmp)
+            exe "edit ".l:tmp
+        endif
+    endif
 endfunction
 " lngljgjlin
 " fjlnngjjggg()
@@ -13,7 +21,14 @@ endfunction
 
 " 2,4call s:t_fun("{", "}")
 " call s:t_fun("edit", ".vim", "g")
-call s:t_fun()
+" call s:t_fun()
+hi! BufTabLineActive ctermfg=235 ctermbg=246 guifg=#282828 guibg=#a10000
+hi! BufTabLineCurrent ctermfg=235 ctermbg=246 guifg=#282828 guibg=#a10000
+hi! BufTabLineHidden ctermfg=235 ctermbg=246 guifg=#282828 guibg=#a10000
+hi! TabLineSel guibg=#a10000
+hi! airline_tabsel guibg=#484848
+
+" hi! BufTabLineActive guibg=#a10000
 " del
 " ln(lnd(log(run(int(grow())))))
 " print nel
