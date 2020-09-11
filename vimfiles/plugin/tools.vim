@@ -76,6 +76,16 @@ function tools#buffDelOther()
     endfor
 endfunction
 
+function tools#openClipPath()
+    let l:cs = @+
+    let l:cs = substitute(l:cs, '^[ "]+|[ "]+$', '', 'g')
+    if filereadable(l:cs)
+        exe "edit ".l:cs
+    else
+        echo 'Path is not readable'
+    endif
+endfunction
+
 command! -nargs=1 Tool call tools#call(<f-args>)
 command! -nargs=1 OpenMFile call tools#openMapFile(<f-args>)
 command! VimSource call tools#sourceCurrent()
@@ -83,6 +93,7 @@ command! OpenVimrc call tools#openInitFile()
 command! BuffDelOther call tools#buffDelOther()
 command! ExplorerView exe "!start explorer ".expand("%:p:h")
 command! Gitbash exe "!start \"D:\\Program Files\\Git\\git-bash.exe\""
+command! EditClipPath call tools#openClipPath()
 
 augroup UVim
     autocmd BufEnter * source <sfile>:p:h:h/events/bufEnter.vim
