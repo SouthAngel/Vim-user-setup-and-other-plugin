@@ -14,6 +14,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'gregsexton/gitv'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'Chiel92/vim-autoformat'
 " Plug 'ervandew/supertab'
 Plug 'dense-analysis/ale'
 " Plug 'SpaceVim/SpaceVim'
@@ -169,6 +170,11 @@ if has_key(g:plugs, "LanguageClient-neovim")
     let g:LanguageClient_serverCommands = {
         \'python': ["C:/Users/SouthAngel/AppData/Roaming/Python/Python38/Scripts/pyls.exe"],
         \}
+endif
+
+" vim-autoformat Plugin {{{2
+if has_key(g:plugs, "vim-autoformat")
+    autocmd FileType xml,json setl softtabstop=2
 endif
 
 " Keymap {{{1

@@ -68,7 +68,7 @@ function tools#quicklyFix()
     endif
 endfunction
 
-function tools#buffDelOther()
+function tools#bufDelOther()
     for bi in getbufinfo()
         if bi['hidden']
             exe 'bd'.bi['bufnr']
@@ -86,14 +86,26 @@ function tools#openClipPath()
     endif
 endfunction
 
+function tools#fileTypeDefine()
+    let l:line = getline(1)
+    if l:line=~" *[\[\{]"
+        set filetype=json
+        echo "json"
+    else
+        echo "Unknown"
+    endif
+endfunction
+
 command! -nargs=1 Tool call tools#call(<f-args>)
 command! -nargs=1 OpenMFile call tools#openMapFile(<f-args>)
+command! FileTypeDefine call tools#fileTypeDefine()
 command! VimSource call tools#sourceCurrent()
 command! OpenVimrc call tools#openInitFile()
-command! BuffDelOther call tools#buffDelOther()
+command! BufDelOther call tools#bufDelOther()
 command! ExplorerView exe "!start explorer ".expand("%:p:h")
 command! Gitbash exe "!start \"D:\\Program Files\\Git\\git-bash.exe\""
 command! EditClipPath call tools#openClipPath()
+command! CdFileFolder exe "cd ".expand("%:p:h")
 
 augroup UVim
     autocmd BufEnter * source <sfile>:p:h:h/events/bufEnter.vim
